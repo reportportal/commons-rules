@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * {@link ErrorType} -> {@link HttpStatus} mapping
+ * {@link ErrorType} to {@link HttpStatus} mapping
  * 
  * @author Andrei Varabyeu
  * 

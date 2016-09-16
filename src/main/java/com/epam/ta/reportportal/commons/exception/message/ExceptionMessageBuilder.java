@@ -33,8 +33,8 @@ public interface ExceptionMessageBuilder<T extends Exception> {
 	/**
 	 * Builds message string from provided exception
 	 * 
-	 * @param e
-	 * @return
+	 * @param e Exception message should be built from
+	 * @return Built message
 	 */
 	String buildMessage(T e);
 }

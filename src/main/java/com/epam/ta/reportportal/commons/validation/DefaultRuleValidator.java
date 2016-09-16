@@ -40,7 +40,7 @@ public class DefaultRuleValidator<T> extends RuleValidator<T> {
      * Verifies predicate and throws {@link BusinessRuleViolationException} is
      * there is violation
      * 
-     * @throws BusinessRuleViolationException
+     * @throws BusinessRuleViolationException if rule condition is not passed
      */
     public void verify() throws BusinessRuleViolationException {
         if (!predicate.test(target)) {

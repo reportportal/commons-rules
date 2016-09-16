@@ -79,7 +79,7 @@ public class DefaultErrorResolver implements ErrorResolver {
 	 * The config-time template is used as the basis for the RestError
 	 * constructed at runtime.
 	 * 
-	 * @param ex
+	 * @param ex Exception to be resolved
 	 * @return the template to use for the RestError instance to be constructed.
 	 */
 	private RestErrorDefinition getRestErrorDefinition(Exception ex) {
@@ -102,8 +102,10 @@ public class DefaultErrorResolver implements ErrorResolver {
 
 	/**
 	 * Return the depth to the superclass matching.
-	 * <p>
-	 * 0 means ex matches exactly. Returns -1 if there's no match. Otherwise,
+	 *
+	 * @param exceptionMapping Possible exception match
+	 * @param ex Exception to be checked
+	 * @return 0 means ex matches exactly. Returns -1 if there's no match. Otherwise,
 	 * returns depth. Lowest depth wins.
 	 */
 	protected int getDepth(Class<? extends Throwable> exceptionMapping, Exception ex) {

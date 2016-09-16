@@ -31,10 +31,9 @@ public interface ErrorResolver {
 
 	/**
 	 * Create RestError from provided exception
-	 * 
-	 * @param request
-	 * @param ex
-	 * @return
+	 *
+	 * @param ex Exception to be resolved
+	 * @return Resolved {@link RestError}
 	 */
 	RestError resolveError(Exception ex);
 }

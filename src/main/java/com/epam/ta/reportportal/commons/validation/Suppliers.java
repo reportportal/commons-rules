@@ -42,10 +42,10 @@ public class Suppliers {
     }
 
     /**
-     * Preemetive supplier for string. Do not do any actions with string
+     * Preemptive supplier for string. Do not do any actions with string
      *
-     * @param string
-     * @return
+     * @param string String to be supplied
+     * @return Supplied String
      */
     public static Supplier<String> stringSupplier(final String string) {
         return () -> string;
@@ -56,9 +56,9 @@ public class Suppliers {
      * be able to pass formatted string with parameters as we did int slf4j.
      * Good approach to avoid string concatenation before we really need it
      *
-     * @param string
-     * @param parameters
-     * @return
+     * @param string String to be supplied
+     * @param parameters Formatter parameters
+     * @return Supplied String
      */
     public static Supplier<String> formattedSupplier(final String string, final Object... parameters) {
         return new Supplier<String>() {
@@ -78,7 +78,7 @@ public class Suppliers {
      * Clears placeholders in the message
      *
      * @param message Message to be cleared
-     * @return
+     * @return Cleared string
      */
     @VisibleForTesting
     public static String clearPlaceholders(String message) {

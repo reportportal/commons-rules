@@ -40,6 +40,7 @@ public class BusinessRule {
      * Create rule from object to be verified, predicate and error message in
      * case of violation
      *
+     * @param <T> Type of object being checked
      * @param object    Object to be validated
      * @param predicate Validation predicate
      * @param message   Error message
@@ -57,6 +58,7 @@ public class BusinessRule {
      * Create rule from object to be verified, predicate and error message in
      * case of violation
      *
+     * @param <T> Type of object being checked
      * @param object          Object to be validated
      * @param predicate       Validation predicate
      * @param messageSupplier Error message supplier
@@ -70,6 +72,7 @@ public class BusinessRule {
     /**
      * Create rule from object to be verified, predicate
      *
+     * @param <T> Type of object being checked
      * @param object    Object to be validated
      * @param predicate Validation predicate
      * @return Validator
