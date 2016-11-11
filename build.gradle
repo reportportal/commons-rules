@@ -19,10 +19,6 @@ apply from: 'release-lib.gradle'
 
 description = 'EPAM Report portal. Report Portal Validation and Error Handling Commons'
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
-}
-
 repositories {
     mavenCentral()
     maven { url  "http://dl.bintray.com/epam/reportportal" }
