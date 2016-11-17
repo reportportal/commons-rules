@@ -20,6 +20,7 @@ apply from: 'release-lib.gradle'
 description = 'EPAM Report portal. Report Portal Validation and Error Handling Commons'
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url  "http://dl.bintray.com/epam/reportportal" }
 }
@@ -31,7 +32,7 @@ dependencyManagement {
 }
 
 dependencies {
-    compile 'com.epam.reportportal:commons-model:2.7.0-ALPHA-4'
+    compile 'com.epam.reportportal:commons-model:2.7.0-bdd'
 
     compile 'com.google.guava:guava:19.0'
 

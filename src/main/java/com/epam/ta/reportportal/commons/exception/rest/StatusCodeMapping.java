@@ -109,7 +109,6 @@ public class StatusCodeMapping {
 			/* Authentication related */
 			put(ErrorType.ACCESS_DENIED, HttpStatus.FORBIDDEN);
 			put(ErrorType.ADDRESS_LOCKED, HttpStatus.FORBIDDEN);
-			put(ErrorType.SESSION_EXPIRED, HttpStatus.UNAUTHORIZED);
 
 			put(ErrorType.INCORRECT_REQUEST, HttpStatus.BAD_REQUEST);
 			put(ErrorType.BAD_REQUEST_ERROR, HttpStatus.BAD_REQUEST);
