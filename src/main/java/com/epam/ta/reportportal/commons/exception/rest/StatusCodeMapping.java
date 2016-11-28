@@ -75,6 +75,7 @@ public class StatusCodeMapping {
 			put(ErrorType.FINISH_ITEM_NOT_ALLOWED, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.LOGGING_IS_NOT_ALLOWED, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.REPORTING_ITEM_ALREADY_FINISHED, HttpStatus.NOT_ACCEPTABLE);
+			put(ErrorType.UNSUPPORTED_MERGE_STRATEGY_TYPE, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_TO_CREATE_WIDGET, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_LOAD_TEST_ITEM_HISTORY, HttpStatus.CONFLICT);
 
