@@ -31,7 +31,9 @@ dependencyManagement {
 }
 
 dependencies {
-    compile 'com.epam.reportportal:commons-model:2.7.0'
+//    compile 'com.epam.reportportal:commons-model:2.7.0'
+    compile 'com.github.reportportal:commons-model:master-SNAPSHOT'
+
 
     compile 'com.google.guava:guava:19.0'
 
