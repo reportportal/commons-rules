@@ -3,7 +3,7 @@
  * 
  * 
  * This file is part of EPAM Report Portal.
- * https://github.com/epam/ReportPortal
+ * https://github.com/reportportal/commons-rules
  * 
  * Report Portal is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -75,6 +75,7 @@ public class StatusCodeMapping {
 			put(ErrorType.FINISH_ITEM_NOT_ALLOWED, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.LOGGING_IS_NOT_ALLOWED, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.REPORTING_ITEM_ALREADY_FINISHED, HttpStatus.NOT_ACCEPTABLE);
+			put(ErrorType.UNSUPPORTED_MERGE_STRATEGY_TYPE, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_TO_CREATE_WIDGET, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_LOAD_TEST_ITEM_HISTORY, HttpStatus.CONFLICT);
 
