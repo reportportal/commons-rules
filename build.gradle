@@ -37,7 +37,7 @@ configurations.all {
 
 dependencies {
 //    compile 'com.epam.reportportal:commons-model:2.7.0'
-    compile 'com.github.reportportal:commons-model:5cacdb32ee'
+    compile 'com.github.reportportal:commons-model:f9e6b8c5f6'
 
 
     compile 'com.google.guava:guava:19.0'
