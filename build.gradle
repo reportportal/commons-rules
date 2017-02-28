@@ -27,7 +27,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.4.3.RELEASE"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.1.RELEASE"
     }
 }
 
@@ -40,7 +40,7 @@ dependencies {
     compile 'com.github.reportportal:commons-model:5cacdb32ee'
 
 
-    compile 'com.google.guava:guava:19.0'
+    compile 'com.google.guava:guava:21.0'
 
     compile 'org.springframework:spring-webmvc'
     compile 'org.springframework.data:spring-data-mongodb'
