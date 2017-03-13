@@ -32,7 +32,7 @@ dependencyManagement {
 }
 
 project.ext {
-    releaseMode = System.getProperty("releaseMode", "false") == "true"
+    releaseMode = project.hasProperty("releaseMode")
 }
 
 
