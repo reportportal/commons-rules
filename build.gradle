@@ -10,7 +10,7 @@ buildscript {
 plugins {
     id 'net.researchgate.release' version '2.4.1'
     id "com.jfrog.bintray" version "1.7"
-    id "io.spring.dependency-management" version "0.6.0.RELEASE"
+    id "io.spring.dependency-management" version "1.0.0.RELEASE"
 }
 
 apply plugin: 'java'
@@ -27,18 +27,22 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.1.RELEASE"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.2.RELEASE"
     }
 }
 
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+project.ext {
+    releaseMode = System.getProperty("releaseMode", "false") == "true"
 }
 
-dependencies {
-//    compile 'com.epam.reportportal:commons-model:2.7.0'
-    compile 'com.github.reportportal:commons-model:62fc1f3745'
 
+dependencies {
+    if (releaseMode) {
+        compile 'com.epam.reportportal:commons-model:3.0.0-BETA-1'
+    } else {
+        compile 'com.github.reportportal:commons-model:62fc1f3745'
+
+    }
 
     compile 'com.google.guava:guava:21.0'
 
