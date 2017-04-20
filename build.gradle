@@ -38,9 +38,9 @@ project.ext {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model:3.0.0-RC1'
+        compile 'com.epam.reportportal:commons-model:3.0.0'
     } else {
-        compile 'com.github.reportportal:commons-model:3.0.0-RC1'
+        compile 'com.github.reportportal:commons-model:3.0.0'
 
     }
 
