@@ -27,7 +27,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.2.RELEASE"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.3.RELEASE"
     }
 }
 
@@ -40,7 +40,7 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model:3.0.0'
     } else {
-        compile 'com.github.reportportal:commons-model:3.0.0'
+        compile 'com.github.reportportal:commons-model:2490535'
 
     }
 

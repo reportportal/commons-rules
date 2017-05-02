@@ -79,6 +79,7 @@ public class StatusCodeMapping {
 			put(ErrorType.UNSUPPORTED_MERGE_STRATEGY_TYPE, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_TO_CREATE_WIDGET, HttpStatus.NOT_ACCEPTABLE);
 			put(ErrorType.UNABLE_LOAD_TEST_ITEM_HISTORY, HttpStatus.CONFLICT);
+			put(ErrorType.DEMO_DATA_GENERATION_ERROR, HttpStatus.NOT_ACCEPTABLE);
 
 			put(ErrorType.DASHBOARD_UPDATE_ERROR, HttpStatus.CONFLICT);
 			put(ErrorType.BAD_SAVE_USER_FILTER_REQUEST, HttpStatus.BAD_REQUEST);
