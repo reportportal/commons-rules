@@ -89,7 +89,7 @@ public class StatusCodeMapping {
 			put(ErrorType.BAD_UPDATE_WIDGET_REQUEST, HttpStatus.BAD_REQUEST);
 			put(ErrorType.FAILED_TEST_ITEM_ISSUE_TYPE_DEFINITION, HttpStatus.BAD_REQUEST);
 			put(ErrorType.BAD_UPDATE_PREFERENCE_REQUEST, HttpStatus.BAD_REQUEST);
-
+			put(ErrorType.BAD_IMPORT_FILE_TYPE, HttpStatus.BAD_REQUEST);
 			put(ErrorType.UNABLE_LOAD_WIDGET_CONTENT, HttpStatus.CONFLICT);
 
 			put(ErrorType.INCORRECT_FILTER_PARAMETERS, HttpStatus.BAD_REQUEST);
