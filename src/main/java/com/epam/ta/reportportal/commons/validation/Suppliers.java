@@ -28,6 +28,8 @@ import org.slf4j.helpers.MessageFormatter;
 
 import java.util.function.Supplier;
 
+import static com.google.common.base.Strings.isNullOrEmpty;
+
 /**
  * Several useful suppliers.
  *
@@ -83,9 +85,18 @@ public class Suppliers {
     @VisibleForTesting
     public static String clearPlaceholders(String message) {
         String cleared = message;
-        if (!Strings.isNullOrEmpty(message) && REPLACEMENT_SYMBOLS.matchesAnyOf(message)) {
+        if (formattedMessage(message)) {
             cleared = REPLACEMENT_SYMBOLS.removeFrom(message).trim();
         }
         return cleared;
+    }
+
+    /**
+     * Checks whether placeholder characters are present in the string
+     * @param str String to check
+     * @return TRUE if at least one placeholder symbol is present
+     */
+    public static boolean formattedMessage(String str) {
+        return !isNullOrEmpty(str) && REPLACEMENT_SYMBOLS.matchesAnyOf(str);
     }
 }

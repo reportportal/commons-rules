@@ -27,6 +27,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
+import static com.epam.ta.reportportal.commons.validation.Suppliers.formattedMessage;
+import static com.epam.ta.reportportal.commons.validation.Suppliers.formattedSupplier;
+
 /**
  * Default implementation of ErrorResolver
  * 
@@ -61,9 +64,15 @@ public class DefaultErrorResolver implements ErrorResolver {
 		LOGGER.error(ex.getMessage(), ex);
 
 		RestError.Builder errorBuilder = new RestError.Builder();
+		String message;
+		if (formattedMessage(errorDefinition.getError().getDescription())) {
+			message = formattedSupplier(errorDefinition.getError().getDescription(), errorDefinition.getExceptionMessage(ex)).get();
+		} else {
+			message = new StringBuilder(errorDefinition.getError().getDescription()).append(" [")
+					.append(errorDefinition.getExceptionMessage(ex)).append("]").toString();
+		}
 		errorBuilder.setError(errorDefinition.getError())
-				.setMessage(new StringBuilder(errorDefinition.getError().getDescription()).append(" [")
-						.append(errorDefinition.getExceptionMessage(ex)).append("]").toString())
+				.setMessage(message)
 				// .setStackTrace(errors.toString())
 				.setStatus(errorDefinition.getHttpStatus());
 
