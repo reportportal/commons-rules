@@ -131,6 +131,8 @@ public class StatusCodeMapping {
 			put(ErrorType.PROJECT_UPDATE_NOT_ALLOWED, HttpStatus.UNPROCESSABLE_ENTITY);
 			put(ErrorType.TICKET_NOT_FOUND, HttpStatus.NOT_FOUND);
 
+			put(ErrorType.RETRIES_HANDLER_ERROR, HttpStatus.BAD_REQUEST);
+
 		}
 	};
 
