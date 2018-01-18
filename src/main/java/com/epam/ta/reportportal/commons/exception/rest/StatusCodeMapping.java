@@ -89,8 +89,8 @@ public class StatusCodeMapping {
 			put(ErrorType.BAD_UPDATE_WIDGET_REQUEST, HttpStatus.BAD_REQUEST);
 			put(ErrorType.FAILED_TEST_ITEM_ISSUE_TYPE_DEFINITION, HttpStatus.BAD_REQUEST);
 			put(ErrorType.BAD_UPDATE_PREFERENCE_REQUEST, HttpStatus.BAD_REQUEST);
-			put(ErrorType.IMPORT_FILE_ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
-			put(ErrorType.PARSING_XML_ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
+			put(ErrorType.IMPORT_FILE_ERROR, HttpStatus.BAD_REQUEST);
+			put(ErrorType.PARSING_XML_ERROR, HttpStatus.BAD_REQUEST);
 			put(ErrorType.UNABLE_LOAD_WIDGET_CONTENT, HttpStatus.CONFLICT);
 
 			put(ErrorType.INCORRECT_FILTER_PARAMETERS, HttpStatus.BAD_REQUEST);
