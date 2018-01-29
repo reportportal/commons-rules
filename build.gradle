@@ -38,9 +38,9 @@ project.ext {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model:4.0.0'
+        compile 'com.epam.reportportal:commons-model:4.0.3'
     } else {
-        compile 'com.github.reportportal:commons-model:7585e71'
+        compile 'com.github.reportportal:commons-model:4.0.3'
     }
 
     compile 'com.google.guava:guava:23.0'
