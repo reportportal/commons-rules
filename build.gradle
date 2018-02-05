@@ -23,11 +23,13 @@ repositories {
     mavenCentral()
     maven { url  "http://dl.bintray.com/epam/reportportal" }
     maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.spring.io/libs-milestone' }
+
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.9.RELEASE"
+        mavenBom "com.github.reportportal:commons-bom:master-SNAPSHOT"
     }
 }
 
@@ -43,11 +45,13 @@ dependencies {
         compile 'com.github.reportportal:commons-model:4.0.3'
     }
 
+    compile 'org.slf4j:slf4j-api:1.7.25'
     compile 'com.google.guava:guava:23.0'
 
+    //TODO to remove
     compile 'org.springframework:spring-webmvc'
-    compile 'org.springframework.data:spring-data-mongodb'
     compile 'org.springframework.security:spring-security-core'
+
     compileOnly 'javax.servlet:javax.servlet-api'
 
 
