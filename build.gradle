@@ -10,7 +10,7 @@ buildscript {
 plugins {
     id 'net.researchgate.release' version '2.4.1'
     id "com.jfrog.bintray" version "1.7"
-    id "io.spring.dependency-management" version "1.0.2.RELEASE"
+    id "io.spring.dependency-management" version "1.0.4.RELEASE"
 }
 
 apply plugin: 'java'
@@ -29,7 +29,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "com.github.reportportal:commons-bom:master-SNAPSHOT"
+        mavenBom "com.github.reportportal:commons-bom:6eb9654"
     }
 }
 
@@ -42,11 +42,11 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model:4.0.3'
     } else {
-        compile 'com.github.reportportal:commons-model:4.0.3'
+        compile 'com.github.reportportal:commons-model:3c63bbd'
     }
 
-    compile 'org.slf4j:slf4j-api:1.7.25'
-    compile 'com.google.guava:guava:23.0'
+    compile 'org.slf4j:slf4j-api'
+    compile 'com.google.guava:guava'
 
     //TODO to remove
     compile 'org.springframework:spring-webmvc'
@@ -55,12 +55,12 @@ dependencies {
     compileOnly 'javax.servlet:javax.servlet-api'
 
 
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
     testCompile 'javax.servlet:javax.servlet-api'
 
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.2'
+    gradleVersion = '4.6'
 }
