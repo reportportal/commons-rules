@@ -73,4 +73,11 @@ public class SuppliersTest {
 		Assert.assertEquals(errMessage, "hello", trimMessage(toTrim, 5));
 	}
 
+	@Test
+	public void trimFormattedSupplierMessageTest() {
+		String demoString = "here is parameter {}";
+		String suppliedString = Suppliers.formattedSupplier(demoString, () -> "param").get();
+		Assert.assertThat("Incorrect message builder", suppliedString, Matchers.is("here is parameter param"));
+	}
+
 }

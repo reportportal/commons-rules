@@ -25,6 +25,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.CharMatcher;
 import org.slf4j.helpers.MessageFormatter;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 import static com.google.common.base.Strings.isNullOrEmpty;
@@ -66,6 +67,30 @@ public class Suppliers {
 			@Override
 			public String get() {
 				return clearPlaceholders(MessageFormatter.arrayFormat(string, parameters).getMessage());
+			}
+
+			@Override
+			public String toString() {
+				return get();
+			}
+		};
+	}
+
+	/**
+	 * Formatted supplier. Applies {@link MessageFormatter} to
+	 * be able to pass formatted string with parameters as we did int slf4j.
+	 * Good approach to avoid string concatenation before we really need it
+	 *
+	 * @param string     String to be supplied
+	 * @param parameters Formatter parameters
+	 * @return Supplied String
+	 */
+	public static Supplier<String> formattedSupplier(final String string, final Supplier<?>... parameters) {
+		return new Supplier<String>() {
+			@Override
+			public String get() {
+				return clearPlaceholders(MessageFormatter.arrayFormat(string, Arrays.stream(parameters).map(Supplier::get).toArray())
+						.getMessage());
 			}
 
 			@Override
