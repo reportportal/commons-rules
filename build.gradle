@@ -27,7 +27,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.9.RELEASE"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.13.RELEASE"
     }
 }
 
@@ -38,9 +38,9 @@ project.ext {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model:4f7b61d'
+        compile 'com.epam.reportportal:commons-model:4.2.0'
     } else {
-        compile 'com.github.reportportal:commons-model:4f7b61d'
+        compile 'com.github.reportportal:commons-model:4.2.0'
     }
 
     compile 'com.google.guava:guava:23.0'
