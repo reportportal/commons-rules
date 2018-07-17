@@ -10,7 +10,7 @@ buildscript {
 plugins {
     id 'net.researchgate.release' version '2.4.1'
     id "com.jfrog.bintray" version "1.7"
-    id "io.spring.dependency-management" version "1.0.4.RELEASE"
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
 }
 
 apply plugin: 'java'
@@ -29,7 +29,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "com.github.reportportal:commons-bom:6eb9654"
+        mavenBom "com.github.reportportal:commons-bom:3822666"
     }
 }
 
