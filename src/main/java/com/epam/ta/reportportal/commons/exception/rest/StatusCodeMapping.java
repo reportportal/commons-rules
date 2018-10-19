@@ -97,12 +97,12 @@ public class StatusCodeMapping {
 			put(ErrorType.INCORRECT_SORTING_PARAMETERS, HttpStatus.BAD_REQUEST);
 
 			// ExternalSystem related
-			put(ErrorType.EXTERNAL_SYSTEM_NOT_FOUND, HttpStatus.NOT_FOUND);
-			put(ErrorType.EXTERNAL_SYSTEM_ALREADY_EXISTS, HttpStatus.CONFLICT);
+			put(ErrorType.INTEGRATION_NOT_FOUND, HttpStatus.NOT_FOUND);
+			put(ErrorType.INTEGRATION_ALREADY_EXISTS, HttpStatus.CONFLICT);
 			put(ErrorType.PROJECT_NOT_CONFIGURED, HttpStatus.NOT_FOUND);
 			put(ErrorType.INCORRECT_AUTHENTICATION_TYPE, HttpStatus.BAD_REQUEST);
-			put(ErrorType.INCORRECT_EXTERNAL_SYSTEM_NAME, HttpStatus.BAD_REQUEST);
-			put(ErrorType.UNABLE_INTERACT_WITH_EXTRERNAL_SYSTEM, HttpStatus.CONFLICT);
+			put(ErrorType.INCORRECT_INTEGRATION_NAME, HttpStatus.BAD_REQUEST);
+			put(ErrorType.UNABLE_INTERACT_WITH_INTEGRATION, HttpStatus.CONFLICT);
 			// ======================
 
 			// Server Settings related
