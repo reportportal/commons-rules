@@ -59,6 +59,9 @@ public class StatusCodeMapping {
 			put(ErrorType.ISSUE_TYPE_NOT_FOUND, HttpStatus.NOT_FOUND);
 			put(ErrorType.PROJECT_SETTINGS_NOT_FOUND, HttpStatus.NOT_FOUND);
 			put(ErrorType.OAUTH_INTEGRATION_NOT_FOUND, HttpStatus.NOT_FOUND);
+			put(ErrorType.USER_FILTER_NOT_FOUND_IN_PROJECT, HttpStatus.NOT_FOUND);
+			put(ErrorType.WIDGET_NOT_FOUND_IN_PROJECT, HttpStatus.NOT_FOUND);
+			put(ErrorType.DASHBOARD_NOT_FOUND_IN_PROJECT, HttpStatus.NOT_FOUND);
 
 			put(ErrorType.RESOURCE_ALREADY_EXISTS, HttpStatus.CONFLICT);
 			put(ErrorType.PROJECT_ALREADY_EXISTS, HttpStatus.CONFLICT);
