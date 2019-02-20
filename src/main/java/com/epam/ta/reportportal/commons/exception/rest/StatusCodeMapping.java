@@ -98,6 +98,10 @@ public class StatusCodeMapping {
 
 			put(ErrorType.INCORRECT_FILTER_PARAMETERS, HttpStatus.BAD_REQUEST);
 			put(ErrorType.INCORRECT_SORTING_PARAMETERS, HttpStatus.BAD_REQUEST);
+			put(ErrorType.PLUGIN_UPLOAD_ERROR, HttpStatus.BAD_REQUEST);
+			put(ErrorType.PLUGIN_REMOVE_ERROR, HttpStatus.BAD_REQUEST);
+			put(ErrorType.OBJECT_RETRIEVAL_ERROR, HttpStatus.BAD_REQUEST);
+			put(ErrorType.UNABLE_TO_SAVE_CHILD_ITEM_FOR_THE_RETRY, HttpStatus.BAD_REQUEST);
 
 			// ExternalSystem related
 			put(ErrorType.INTEGRATION_NOT_FOUND, HttpStatus.NOT_FOUND);
