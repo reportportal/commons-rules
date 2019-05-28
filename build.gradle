@@ -42,7 +42,7 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model:4.0.3'
     } else {
-        compile 'com.github.reportportal:commons-model:1190ca9'
+        compile 'com.github.reportportal:commons-model:e63d8e9'
     }
 
     compile 'org.slf4j:slf4j-api'
