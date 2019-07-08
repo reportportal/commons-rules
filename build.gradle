@@ -33,14 +33,13 @@ project.ext {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model:5.0.0-BETA-2'
+        compile 'com.epam.reportportal:commons-model:5.0.0-BETA-4'
     } else {
-        compile 'com.github.reportportal:commons-model:e63d8e9'
+        compile 'com.github.reportportal:commons-model:5.0.0-BETA-4'
     }
 
     compile 'org.slf4j:slf4j-api'
     compile 'com.google.guava:guava'
-    //TODO to remove
     compile 'org.springframework:spring-webmvc'
     compile 'org.springframework.security:spring-security-core'
     compileOnly 'javax.servlet:javax.servlet-api'
