@@ -1,33 +1,28 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-
-}
-
 plugins {
-    id 'net.researchgate.release' version '2.4.1'
-    id "com.jfrog.bintray" version "1.7"
-    id "io.spring.dependency-management" version "1.0.2.RELEASE"
+    id 'java'
+    id 'net.researchgate.release' version '2.8.0'
+    id "com.jfrog.bintray" version "1.8.4"
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+    id "org.owasp.dependencycheck" version "5.0.0-M3.1"
 }
 
-apply plugin: 'java'
 apply from: 'build-quality.gradle'
-apply from: 'release-lib.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/release-commons.gradle'
 
 description = 'EPAM Report portal. Report Portal Validation and Error Handling Commons'
 
 repositories {
     mavenCentral()
-    maven { url  "http://dl.bintray.com/epam/reportportal" }
+    maven { url "http://dl.bintray.com/epam/reportportal" }
     maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.spring.io/libs-milestone' }
+
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:1.5.13.RELEASE"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE"
+        mavenBom "com.github.reportportal:commons-bom:f8ca1d4"
     }
 }
 
@@ -38,25 +33,25 @@ project.ext {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model:4.2.0'
+        compile 'com.epam.reportportal:commons-model:5.0.0-BETA-2'
     } else {
-        compile 'com.github.reportportal:commons-model:4.2.0'
+        compile 'com.github.reportportal:commons-model:e63d8e9'
     }
 
-    compile 'com.google.guava:guava:23.0'
-
+    compile 'org.slf4j:slf4j-api'
+    compile 'com.google.guava:guava'
+    //TODO to remove
     compile 'org.springframework:spring-webmvc'
-    compile 'org.springframework.data:spring-data-mongodb'
     compile 'org.springframework.security:spring-security-core'
     compileOnly 'javax.servlet:javax.servlet-api'
 
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'junit:junit'
+    testCompile 'org.hamcrest:hamcrest-all'
     testCompile 'javax.servlet:javax.servlet-api'
 
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.2'
+wrapper {
+    gradleVersion = '5.4.1'
 }

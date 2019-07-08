@@ -28,7 +28,6 @@ import com.epam.ta.reportportal.exception.ReportPortalException;
 import com.epam.ta.reportportal.ws.model.ErrorType;
 import com.google.common.collect.ImmutableMap;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.data.mongodb.InvalidMongoDbApiUsageException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -69,9 +68,7 @@ public final class ExceptionMappings {
 			.put(LockedException.class, new RestErrorDefinition<>(403, ErrorType.ADDRESS_LOCKED, DEFAULT_MESSAGE_BUILDER))
 			.put(ReportPortalException.class, new RestErrorDefinition<>(500, ErrorType.UNCLASSIFIED_REPORT_PORTAL_ERROR, DEFAULT_MESSAGE_BUILDER))
 
-			//TODO move to DAO
-			.put(InvalidMongoDbApiUsageException.class, new RestErrorDefinition<>(400, ErrorType.INCORRECT_FILTER_PARAMETERS, DEFAULT_MESSAGE_BUILDER))
-			.put(RestClientException.class, new RestErrorDefinition<>(400, ErrorType.UNABLE_INTERACT_WITH_EXTRERNAL_SYSTEM, DEFAULT_MESSAGE_BUILDER))
+			.put(RestClientException.class, new RestErrorDefinition<>(400, ErrorType.UNABLE_INTERACT_WITH_INTEGRATION, DEFAULT_MESSAGE_BUILDER))
 
 			.put(Throwable.class, new RestErrorDefinition<>(500, ErrorType.UNCLASSIFIED_ERROR, DEFAULT_MESSAGE_BUILDER))
 				.build();
