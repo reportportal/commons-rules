@@ -1,43 +1,37 @@
 plugins {
     id 'java'
     id "io.spring.dependency-management" version "1.0.8.RELEASE"
-    id "org.owasp.dependencycheck" version "5.0.0-M3.1"
+    id "org.owasp.dependencycheck" version "5.2.0"
 }
 
-apply from: 'build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/release-commons.gradle'
-
-description = 'EPAM Report portal. Report Portal Validation and Error Handling Commons'
-
-repositories {
-    mavenCentral()
-    maven { url "http://dl.bintray.com/epam/reportportal" }
-    maven { url 'https://jitpack.io' }
-    maven { url 'https://repo.spring.io/libs-milestone' }
-
-}
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 project.ext {
     releaseMode = project.hasProperty("releaseMode")
 }
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE"
-        if (releaseMode) {
-            mavenBom "com.epam.reportportal:commons-bom:5.0.0-RC-5"
-        } else {
-            mavenBom "com.github.reportportal:commons-bom:4b7ed8a"
-        }
-    }
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/build-quality.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/release-commons.gradle'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/libs-milestone' }
+    releaseMode ? maven { url "http://dl.bintray.com/epam/reportportal" } : maven { url 'https://jitpack.io' }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
+        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.0.0-RC-5' : 'com.github.reportportal:commons-bom:4b7ed8a')
+    }
+}
 
 dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model'
     } else {
-        compile 'com.github.reportportal:commons-model:5.0.0-BETA-6'
+        compile 'com.github.reportportal:commons-model:2f23f50'
     }
 
     compile 'org.slf4j:slf4j-api'
@@ -46,11 +40,9 @@ dependencies {
     compile 'org.springframework.security:spring-security-core'
     compileOnly 'javax.servlet:javax.servlet-api'
 
-
     testCompile 'junit:junit'
     testCompile 'org.hamcrest:hamcrest-all'
     testCompile 'javax.servlet:javax.servlet-api'
-
 }
 
 wrapper {
