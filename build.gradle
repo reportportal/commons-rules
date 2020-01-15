@@ -4,15 +4,13 @@ plugins {
     id "org.owasp.dependencycheck" version "5.2.0"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
-project.ext {
-    releaseMode = project.hasProperty("releaseMode")
-}
+project.ext.releaseMode = project.hasProperty("releaseMode")
 
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/release-commons.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/v5.1/build-quality.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/v5.1/release-commons.gradle'
 
 repositories {
     mavenCentral()
@@ -31,7 +29,7 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model'
     } else {
-        compile 'com.github.reportportal:commons-model:2f23f50'
+        compile 'com.github.reportportal:commons-model:8da23df'
     }
 
     compile 'org.slf4j:slf4j-api'
