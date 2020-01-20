@@ -11,8 +11,8 @@ project.ext {
     releaseMode = project.hasProperty("releaseMode")
 }
 
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/release-commons.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.0.0/build-quality.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.0.0/release-commons.gradle'
 
 repositories {
     mavenCentral()
@@ -23,7 +23,7 @@ repositories {
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
-        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.0.0-RC-5' : 'com.github.reportportal:commons-bom:4b7ed8a')
+        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.0.0' : 'com.github.reportportal:commons-bom:4b7ed8a')
     }
 }
 
