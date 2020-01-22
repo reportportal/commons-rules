@@ -4,15 +4,13 @@ plugins {
     id "org.owasp.dependencycheck" version "5.2.0"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
-project.ext {
-    releaseMode = project.hasProperty("releaseMode")
-}
+project.ext.releaseMode = project.hasProperty("releaseMode")
 
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.0.0/build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.0.0/release-commons.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/develop/build-quality.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/develop/release-commons.gradle'
 
 repositories {
     mavenCentral()
@@ -31,22 +29,23 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model'
     } else {
-        compile 'com.github.reportportal:commons-model:2f23f50'
+        compile 'com.github.reportportal:commons-model:8da23df'
     }
 
     compile 'org.slf4j:slf4j-api'
     compile 'com.google.guava:guava'
     compile 'org.springframework:spring-webmvc'
     compile 'org.springframework.security:spring-security-core'
-    compileOnly 'javax.servlet:javax.servlet-api'
+    implementation 'javax.servlet:javax.servlet-api'
 
-    testCompile 'junit:junit'
-    testCompile 'org.hamcrest:hamcrest-all'
-    testCompile 'javax.servlet:javax.servlet-api'
+
+    testImplementation 'junit:junit'
+    testImplementation 'org.hamcrest:hamcrest-all'
+    testImplementation 'javax.servlet:javax.servlet-api'
 }
 
 wrapper {
-    gradleVersion = '5.4.1'
+    gradleVersion = '6.0'
 }
 
 afterReleaseBuild.dependsOn bintrayUpload
