@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id "io.spring.dependency-management" version "1.0.8.RELEASE"
-    id "org.owasp.dependencycheck" version "5.2.0"
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    id "org.owasp.dependencycheck" version "5.3.1"
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -9,19 +9,17 @@ targetCompatibility = JavaVersion.VERSION_11
 
 project.ext.releaseMode = project.hasProperty("releaseMode")
 
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.1.0-RC/build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.1.0-RC/release-commons.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/develop/build-quality.gradle'
+apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/develop/release-commons.gradle'
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/libs-milestone' }
     releaseMode ? maven { url "http://dl.bintray.com/epam/reportportal" } : maven { url 'https://jitpack.io' }
 }
 
 dependencyManagement {
     imports {
-        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
-        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.1.0-RC' : 'com.github.reportportal:commons-bom:7affe20')
+        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.0.0-RC-5' : 'com.github.reportportal:commons-bom:7ea4bf3')
     }
 }
 
@@ -29,7 +27,7 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model'
     } else {
-        compile 'com.github.reportportal:commons-model:aad6245'
+        compile 'com.github.reportportal:commons-model:22ccaac'
     }
 
     compile 'org.slf4j:slf4j-api'
