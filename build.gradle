@@ -10,7 +10,7 @@ targetCompatibility = JavaVersion.VERSION_11
 project.ext.releaseMode = project.hasProperty("releaseMode")
 
 def scriptsUrl = 'https://raw.githubusercontent.com/reportportal/gradle-scripts/' +
-        (project.hasProperty("releaseMode") ? getProperty('scripts.version') : 'develop')
+        (releaseMode ? getProperty('scripts.version') : 'develop')
 
 apply from: scriptsUrl + '/release-commons.gradle'
 apply from: scriptsUrl + '/build-quality.gradle'
