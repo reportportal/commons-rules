@@ -9,8 +9,12 @@ targetCompatibility = JavaVersion.VERSION_11
 
 project.ext.releaseMode = project.hasProperty("releaseMode")
 
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.1.0-RC/build-quality.gradle'
-apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/5.1.0-RC/release-commons.gradle'
+def scriptsUrl = 'https://raw.githubusercontent.com/reportportal/gradle-scripts/' +
+        (project.hasProperty("releaseMode") ? getProperty('scripts.version') : 'develop')
+
+apply from: scriptsUrl + '/release-commons.gradle'
+apply from: scriptsUrl + '/build-quality.gradle'
+
 
 repositories {
     mavenCentral()
@@ -18,10 +22,11 @@ repositories {
     releaseMode ? maven { url "http://dl.bintray.com/epam/reportportal" } : maven { url 'https://jitpack.io' }
 }
 
+
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
-        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:5.1.0-RC' : 'com.github.reportportal:commons-bom:7affe20')
+        mavenBom(releaseMode ? 'com.epam.reportportal:commons-bom:' + getProperty('bom.version') : 'com.github.reportportal:commons-bom:7affe20')
     }
 }
 
