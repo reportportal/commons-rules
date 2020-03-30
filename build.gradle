@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id "io.spring.dependency-management" version "1.0.8.RELEASE"
-    id "org.owasp.dependencycheck" version "5.2.0"
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    id "org.owasp.dependencycheck" version "5.3.1"
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -18,7 +18,6 @@ apply from: scriptsUrl + '/build-quality.gradle'
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/libs-milestone' }
     releaseMode ? maven { url "http://dl.bintray.com/epam/reportportal" } : maven { url 'https://jitpack.io' }
 }
 
@@ -34,7 +33,7 @@ dependencies {
     if (releaseMode) {
         compile 'com.epam.reportportal:commons-model'
     } else {
-        compile 'com.github.reportportal:commons-model:aad6245'
+        compile 'com.github.reportportal:commons-model:22ccaac'
     }
 
     compile 'org.slf4j:slf4j-api'
