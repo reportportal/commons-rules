@@ -10,9 +10,12 @@ targetCompatibility = JavaVersion.VERSION_11
 project.ext.releaseMode = project.hasProperty("releaseMode")
 
 def scriptsUrl = 'https://raw.githubusercontent.com/reportportal/gradle-scripts/' +
-        (releaseMode ? getProperty('scripts.version') : 'develop')
+        (releaseMode ? getProperty('scripts.version') : 'github-release-action')
+
+project.ext.publishRepo = "https://maven.pkg.github.com/reportportal/commons-rules"
 
 apply from: scriptsUrl + '/release-commons.gradle'
+apply from: scriptsUrl + '/release-github.gradle'
 apply from: scriptsUrl + '/build-quality.gradle'
 
 
@@ -51,5 +54,3 @@ dependencies {
 wrapper {
     gradleVersion = '6.0'
 }
-
-afterReleaseBuild.dependsOn bintrayUpload
