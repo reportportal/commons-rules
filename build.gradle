@@ -7,21 +7,33 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
-project.ext.releaseMode = project.hasProperty("releaseMode")
+project.ext {
+    releaseMode = project.hasProperty("releaseMode")
+    publishRepo = "https://maven.pkg.github.com/reportportal/commons-rules"
+    dependencyRepos = ["commons-model"]
+}
 
 def scriptsUrl = 'https://raw.githubusercontent.com/reportportal/gradle-scripts/' +
         (releaseMode ? getProperty('scripts.version') : 'github-release-action')
 
-project.ext.publishRepo = "https://maven.pkg.github.com/reportportal/commons-rules"
-
 apply from: scriptsUrl + '/release-commons.gradle'
-apply from: scriptsUrl + '/release-github.gradle'
+apply from: scriptsUrl + '/signing.gradle'
 apply from: scriptsUrl + '/build-quality.gradle'
 
 
 repositories {
     mavenCentral()
-    releaseMode ? maven { url "http://dl.bintray.com/epam/reportportal" } : maven { url 'https://jitpack.io' }
+    releaseMode ? {
+        dependencyRepos.forEach { path ->
+            maven {
+                setUrl("https://maven.pkg.github.com/reportportal/${path}")
+                credentials {
+                    username = findProperty("githubUserName")
+                    password = findProperty("githubToken")
+                }
+            }
+        }
+    } : maven { url 'https://jitpack.io' }
 }
 
 
