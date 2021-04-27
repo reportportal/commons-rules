@@ -10,7 +10,7 @@ targetCompatibility = JavaVersion.VERSION_11
 project.ext {
     releaseMode = project.hasProperty("releaseMode")
     publishRepo = "https://maven.pkg.github.com/reportportal/commons-rules"
-    dependencyRepos = ["commons-model"]
+    dependencyRepos = ["commons-model", "commons-bom"]
 }
 
 def scriptsUrl = 'https://raw.githubusercontent.com/reportportal/gradle-scripts/' +
