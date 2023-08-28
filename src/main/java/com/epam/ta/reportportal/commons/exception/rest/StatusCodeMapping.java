@@ -61,6 +61,7 @@ public class StatusCodeMapping {
             put(ErrorType.ANALYZER_NOT_FOUND, HttpStatus.NOT_FOUND);
             put(ErrorType.ATTACHMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
             put(ErrorType.UNABLE_TO_LOAD_BINARY_DATA, HttpStatus.NOT_FOUND);
+            put(ErrorType.CLUSTER_NOT_FOUND, HttpStatus.NOT_FOUND);
 
             put(ErrorType.RESOURCE_ALREADY_EXISTS, HttpStatus.CONFLICT);
             put(ErrorType.PROJECT_ALREADY_EXISTS, HttpStatus.CONFLICT);

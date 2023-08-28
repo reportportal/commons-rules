@@ -72,7 +72,7 @@ public class ExceptionHandlingTest {
 				{ new HttpMessageNotReadableException(EXCEPTION_MESSAGE), ErrorType.INCORRECT_REQUEST, HttpStatus.BAD_REQUEST,
 						EXCEPTION_MESSAGE },
 				{ new MissingServletRequestParameterException("test", "test"), ErrorType.INCORRECT_REQUEST, HttpStatus.BAD_REQUEST,
-						"Required test parameter 'test' is not present" } });
+						"Incorrect Request. Required request parameter 'test' for method parameter type test is not present" } });
 	}
 
 	@Test
