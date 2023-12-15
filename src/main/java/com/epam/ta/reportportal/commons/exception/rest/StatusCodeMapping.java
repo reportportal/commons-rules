@@ -38,6 +38,7 @@ public class StatusCodeMapping {
         private static final long serialVersionUID = 1L;
 
         {
+            put(ErrorType.NOT_FOUND, HttpStatus.NOT_FOUND);
             put(ErrorType.PROJECT_NOT_FOUND, HttpStatus.NOT_FOUND);
             put(ErrorType.LAUNCH_NOT_FOUND, HttpStatus.NOT_FOUND);
             put(ErrorType.TEST_ITEM_NOT_FOUND, HttpStatus.NOT_FOUND);
