@@ -16,7 +16,7 @@
 
 package com.epam.ta.reportportal.commons.exception.rest;
 
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;

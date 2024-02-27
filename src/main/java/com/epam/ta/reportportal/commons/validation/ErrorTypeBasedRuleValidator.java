@@ -17,8 +17,8 @@
 package com.epam.ta.reportportal.commons.validation;
 
 import com.epam.ta.reportportal.exception.ReportPortalException;
-import com.epam.ta.reportportal.ws.model.ErrorType;
 
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import java.util.function.Predicate;
 
 public class ErrorTypeBasedRuleValidator<T> extends RuleValidator<T> {
