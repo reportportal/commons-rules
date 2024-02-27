@@ -12,20 +12,20 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ 
- 
+ */
+
 package com.epam.ta.reportportal.commons.exception.rest;
 
-import com.epam.ta.reportportal.ws.model.ErrorRS;
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorRS;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import org.springframework.http.HttpStatus;
 
 /**
  * Rest Error representation. Contains rest error template and real exception
  * data
- * 
+ *
  * @author Andrei Varabyeu
- * 
+ *
  */
 public class RestError {
 
@@ -49,9 +49,9 @@ public class RestError {
 
 	/**
 	 * Builder for Rest Error
-	 * 
+	 *
 	 * @author Andrei Varabyeu
-	 * 
+	 *
 	 */
 	public static class Builder {
 

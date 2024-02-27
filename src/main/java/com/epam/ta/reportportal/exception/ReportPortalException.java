@@ -17,7 +17,7 @@
 package com.epam.ta.reportportal.exception;
 
 import com.epam.ta.reportportal.commons.validation.Suppliers;
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 
 import static com.epam.ta.reportportal.commons.validation.Suppliers.trimMessage;
 
