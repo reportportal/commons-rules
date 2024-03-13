@@ -17,7 +17,7 @@
 package com.epam.ta.reportportal.ws.exception.rest;
 
 import com.epam.ta.reportportal.commons.exception.rest.StatusCodeMapping;
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import org.junit.Assert;
 import org.junit.Test;
 

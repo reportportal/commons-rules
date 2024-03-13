@@ -39,9 +39,9 @@ dependencyManagement {
 
 dependencies {
     if (releaseMode) {
-        compile 'com.epam.reportportal:commons-model'
+        compile 'com.epam.reportportal:commons-reporting'
     } else {
-        compile 'com.github.reportportal:commons-model:83f012f'
+        implementation 'com.github.reportportal:commons-reporting:c324bab'
     }
 
     compile 'org.slf4j:slf4j-api'

@@ -21,7 +21,7 @@ import com.epam.ta.reportportal.commons.exception.rest.DefaultErrorResolver;
 import com.epam.ta.reportportal.commons.exception.rest.ErrorResolver;
 import com.epam.ta.reportportal.commons.exception.rest.RestError;
 import com.epam.ta.reportportal.exception.ReportPortalException;
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import com.google.common.base.Strings;
 import org.hamcrest.Matchers;
 import org.junit.Assert;

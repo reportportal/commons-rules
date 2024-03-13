@@ -20,7 +20,7 @@ import com.epam.ta.reportportal.commons.exception.message.DefaultExceptionMessag
 import com.epam.ta.reportportal.commons.exception.message.ExceptionMessageBuilder;
 import com.epam.ta.reportportal.commons.exception.rest.RestErrorDefinition;
 import com.epam.ta.reportportal.exception.ReportPortalException;
-import com.epam.ta.reportportal.ws.model.ErrorType;
+import com.epam.ta.reportportal.ws.reporting.ErrorType;
 import com.google.common.collect.ImmutableMap;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.http.converter.HttpMessageNotReadableException;
