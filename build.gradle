@@ -29,7 +29,6 @@ repositories {
     }
 }
 
-
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
